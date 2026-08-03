@@ -35,7 +35,7 @@ jobs:
           cache: 'npm'  # 启用 npm 缓存，加快安装速度
       
       - name: 安装依赖
-        run: npm install  # npm install 比 npm install 更快、更可靠
+        run: npm ci  # npm ci 比 npm install 更快、更可靠
       
       - name: 运行 ESLint
         run: npm run lint
@@ -60,7 +60,7 @@ jobs:
           cache: 'npm'
       
       - name: 安装依赖
-        run: npm install
+        run: npm ci
       
       - name: 运行测试
         run: npm test -- --coverage
@@ -90,7 +90,7 @@ jobs:
           cache: 'npm'
       
       - name: 安装依赖
-        run: npm install
+        run: npm ci
       
       - name: 构建项目
         run: npm run build
