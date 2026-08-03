@@ -5,7 +5,7 @@ import App from './App'
 describe('App', () => {
   it('renders the hero heading', () => {
     render(<App />)
-    expect(screen.getByText('Get started')).toBeTruthy()
+    expect(screen.getByText('我的第一个 React 页面')).toBeTruthy()
   })
 
   it('updates the count when the button is clicked', () => {
