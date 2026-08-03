@@ -443,7 +443,9 @@ JSX 里给元素挂事件，直接写 `on事件名={处理函数}`：
 
 **`npm install` / `npm ci`**
 
-安装依赖。第一次拿到项目（或删了 `node_modules`）时必须先跑。`npm ci` 会把版本严格对齐 `package-lock.json`，更慢一点但更可复现，CI 里常用。你的工作流里用的是 `npm install`，本地也一样没问题。
+安装依赖。第一次拿到项目（或删了 `node_modules`）时必须先跑。`npm ci` 会把版本严格对齐 `package-lock.json`，更慢一点但更可复现，CI 里常用。你的工作流里用的就是 `npm ci`。
+
+注意 `npm ci` 对 lock 文件要求很严格：如果 `package-lock.json` 不完整（比如用不同平台的 npm 生成的 lock 缺了部分可选依赖），它会直接报 `EUSAGE` 错误，而 `npm install` 会宽松地自动补全。遇到这种情况，本地执行一次 `npm install` 更新 lock 文件，把更新后的 `package-lock.json` 一起提交即可。
 
 **`npm run dev`**
 
